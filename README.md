@@ -20,7 +20,7 @@
 * `setUp` runs at the start of each test method, so can keep code DRY by creating a function in camelCase at start to create a relevant instance.
 * The `tearDown` method can be used to remove temporary files, folders or close a connection to a database and is runa fter every test.
 * Can't use `setUp` to run code to prepopulate a database etc. as it runs at the start of each test, but there is `setUpClass` case that can be used. Similarly, a `tearDownClass`.
-* Runs are in the form of: 
-`setUpClass`
-{for each test}`setUp`-> `Test`-> `tearDown`
+* Runs are in the form of:<br/>
+`setUpClass`<br/>
+{for each test}`setUp`-> `Test`-> `tearDown`<br/>
 `tearDownClass`
