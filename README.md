@@ -24,3 +24,7 @@
 `setUpClass`<br/>
 {for each test}`setUp`-> `Test`-> `tearDown`<br/>
 `tearDownClass`
+
+#### Mocking:
+* Mock or imitate the behaviour of external factors to confirm that our methods work as intended. E.g. In case an external API fails.
+* Requires the use of `unittest.mock.patch` to mock both a successful and unsuccessful patch.
