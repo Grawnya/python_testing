@@ -14,4 +14,13 @@
 #### Unittest Library:
 * Unittest requires that our test  filename starts with the word `test` followed by an underscore and a descriptive name of what we’re testing.
 * If we don’t start the method name with the word test, it will be ignored and won't run, when we run the test file.
-* 
+* See sample unittests in test_evens.py and test_student.py files
+
+#### Lifecycle of a Test:
+* `setUp` runs at the start of each test method, so can keep code DRY by creating a function in camelCase at start to create a relevant instance.
+* The `tearDown` method can be used to remove temporary files, folders or close a connection to a database and is runa fter every test.
+* Can't use `setUp` to run code to prepopulate a database etc. as it runs at the start of each test, but there is `setUpClass` case that can be used. Similarly, a `tearDownClass`.
+* Runs are in the form of: 
+`setUpClass`
+{for each test}`setUp`-> `Test`-> `tearDown`
+`tearDownClass`

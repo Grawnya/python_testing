@@ -3,21 +3,36 @@ from student import Student
 
 class TestStudent(unittest.TestCase):
 
-    def test_full_name(self):
-        student = Student('John', 'Doe')
+    @classmethod
+    def setUpClass(cls): 
+        # cls used as setUpClass is a class method that affects the class itself 
+        print('setUpClass')
+    
+    
+    @classmethod
+    def tearDownClass(cls): 
+        print('tearDownClass')
 
-        self.assertEqual(student.full_name, 'John Doe')
+    def setUp(self):
+        print('setUp')
+        self.student = Student('John', 'Doe')
+
+    def tearDown(self):
+        print('tearDown')
+
+    def test_full_name(self):
+        print('test_full_name')
+        self.assertEqual(self.student.full_name, 'John Doe')
 
     def test_alert_santa(self):
-        student = Student('John', 'Doe')
-        student.alert_santa()
+        print('test_alert_santa')
+        self.student.alert_santa()
 
-        self.assertTrue(student.naughty_list)
+        self.assertTrue(self.student.naughty_list)
 
     def test_email(self):
-        student = Student('John', 'Doe')
-
-        self.assertEqual(student.email, 'john.doe@email.com')
+        print('test_email')
+        self.assertEqual(self.student.email, 'john.doe@email.com')
 
 if __name__ == "__main__":
     unittest.main()
